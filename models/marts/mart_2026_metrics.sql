@@ -14,8 +14,8 @@ with base_orders as (
 )
 
 select
-    year(date_date) as order_year,
-    month(date_date) as order_month,
+    cast(year(date_date) as varchar(50)) as order_year,
+    cast(month(date_date) as varchar(50)) as order_month,
     count(order_id) as total_orders, -- Exercise 1 (total orders adding in Power BI) & Exercise 2 (nb of orders per month)
     avg(cast(qty_product as float)) as avg_qty_per_order -- Exercise 3 (average quantity per order)
 from base_orders

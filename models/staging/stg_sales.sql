@@ -21,9 +21,9 @@ filtered_data as (
 
 select
     cast(col_date as date) as date_date,
-    cast(col_customer as int) as customer_id,
-    cast(col_order as int) as order_id,
-    cast(col_product as int) as products_id,
+    cast(col_customer as varchar(50)) as customer_id,
+    cast(col_order as varchar(50)) as order_id,
+    cast(col_product as varchar(50)) as products_id,
     cast(col_sales as decimal(18, 2)) as net_sales,
     cast(col_qty as int) as qty
 from filtered_data

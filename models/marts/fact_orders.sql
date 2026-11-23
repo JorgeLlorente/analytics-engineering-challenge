@@ -14,8 +14,8 @@ order_segments as (
 )
 
 select
-    o.order_id,
-    o.customer_id,
+    cast(o.order_id as varchar(50)) as order_id,
+    cast(o.customer_id as varchar(50)) as customer_id,
     o.date_date,
     o.net_sales,
     coalesce(q.qty_product, 0) as qty_product, -- Exercise 4
