@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Raw data layer ingested from Excel files into Microsoft Fabric Lakehouse."
+    database: "{{ var('bronze_database') }}"
+    schema: "{{ var('bronze_schema') }}"
+    tables:
+      - name: raw_sales
+        description: "Raw sales line items at the product and order level."
+        columns:
+          - name: Prop_0
+            description: "Transaction date (date_date)."
+            tests:
+              - not_null
+
+          - name: Prop_1
+            description: "Unique customer identifier (customer_id)."
+            tests:
+              - not_null
+
+          - name: Prop_2
+            description: "Unique order identifier (order_id)."
+            tests:
+              - not_null
+
+          - name: Prop_3
+            description: "Sold product identifier (products_id)."
+            tests:
+              - not_null
+
+          - name: Prop_4
+            description: "Net sales amount for the line item (net_sales)."
+            tests:
+              - not_null
+
+          - name: Prop_5
+            description: "Quantity of product units sold (qty)."
+            tests:
+              - not_null
