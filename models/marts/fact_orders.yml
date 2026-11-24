@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Order fact table with sales, quantity, and customer-order segmentation measures."
+    columns:
+      - name: order_id
+        data_type: varchar
+        description: "Unique identifier of the order."
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+      - name: customer_id
+        data_type: varchar
+        description: "Identifier of the customer that placed the order."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: date_date
+        data_type: date
+        description: "Date on which the order was created."
+        tests:
+          - not_null
+      - name: net_sales
+        data_type: decimal
+        description: "Net sales amount for the order."
+        tests:
+          - not_null
+      - name: qty_product
+        data_type: int
+        description: "Total quantity of product units sold in the order."
+        tests:
+          - not_null
+      - name: order_segmentation
+        data_type: varchar
+        description: "Customer-order segment: New, Returning, VIP, or Unknown."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['New', 'Returning', 'VIP', 'Unknown']

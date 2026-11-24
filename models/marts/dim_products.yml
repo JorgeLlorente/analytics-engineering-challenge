@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Product dimension containing one row for each distinct product sold."
+    columns:
+      - name: products_id
+        data_type: varchar
+        description: "Unique identifier of the product."
+        tests:
+          - not_null
+          - unique

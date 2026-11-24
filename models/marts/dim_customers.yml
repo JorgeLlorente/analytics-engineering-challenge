@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension containing one row for each distinct customer."
+    columns:
+      - name: customer_id
+        data_type: varchar
+        description: "Unique identifier of the customer."
+        tests:
+          - not_null
+          - unique

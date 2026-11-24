@@ -2,8 +2,8 @@
     materialized = 'table'
 ) }}
 
-with base as (
+with customers as (
     select distinct customer_id
     from {{ ref('stg_orders') }}
 )
-select * from base
+select * from customers

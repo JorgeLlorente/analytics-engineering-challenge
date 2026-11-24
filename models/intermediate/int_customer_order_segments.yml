@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: int_customer_order_segments
+    description: "Segments each order according to the number of prior orders by the same customer over the previous 365 days."
+    columns:
+      - name: order_id
+        data_type: varchar
+        description: "Identifier of the order."
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+      - name: prior_orders_last_12m
+        data_type: int
+        description: "Number of prior orders placed by the customer before this order within the preceding 365 days."
+        tests:
+          - not_null
+      - name: order_segmentation
+        data_type: varchar
+        description: "Customer-order segment: New, Returning, VIP, or Unknown."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['New', 'Returning', 'VIP', 'Unknown']

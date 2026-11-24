@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int_orders_qty
+    description: "Aggregates the sold quantity of products for each order."
+    columns:
+      - name: order_id
+        data_type: varchar
+        description: "Identifier of the order."
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+      - name: qty_product
+        data_type: int
+        description: "Total quantity of product units sold in the order."
+        tests:
+          - not_null

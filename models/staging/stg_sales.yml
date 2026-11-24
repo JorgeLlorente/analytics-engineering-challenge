@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_sales
+    description: "Normalized and filtered sales line-item data loaded from the bronze raw_sales source."
+    columns:
+      - name: date_date
+        data_type: date
+        description: "Date on which the sales transaction occurred."
+        tests:
+          - not_null
+      - name: customer_id
+        data_type: varchar
+        description: "Identifier of the customer associated with the sales line."
+        tests:
+          - not_null
+      - name: order_id
+        data_type: varchar
+        description: "Identifier of the order associated with the sales line."
+        tests:
+          - not_null
+      - name: products_id
+        data_type: varchar
+        description: "Identifier of the product sold."
+        tests:
+          - not_null
+      - name: net_sales
+        data_type: decimal
+        description: "Net sales amount for the sales line, rounded to two decimal places."
+        tests:
+          - not_null
+      - name: qty
+        data_type: int
+        description: "Number of product units sold in the sales line."
+        tests:
+          - not_null

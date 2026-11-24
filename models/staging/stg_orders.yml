@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Normalized order header data loaded from the bronze raw_orders source."
+    columns:
+      - name: date_date
+        data_type: date
+        description: "Date on which the order was created."
+        tests:
+          - not_null
+      - name: customer_id
+        data_type: varchar
+        description: "Identifier of the customer that placed the order."
+        tests:
+          - not_null
+      - name: order_id
+        data_type: varchar
+        description: "Unique identifier of the order."
+        tests:
+          - not_null
+          - unique
+      - name: net_sales
+        data_type: decimal
+        description: "Net sales amount for the order, rounded to two decimal places."
+        tests:
+          - not_null
