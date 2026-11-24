@@ -24,6 +24,6 @@ select
     cast(col_customer as varchar(50)) as customer_id,
     cast(col_order as varchar(50)) as order_id,
     cast(col_product as varchar(50)) as products_id,
-    cast(col_sales as decimal(18, 2)) as net_sales,
+    cast(col_sales as decimal(18, 4)) as net_sales,
     cast(col_qty as int) as qty
 from filtered_data
