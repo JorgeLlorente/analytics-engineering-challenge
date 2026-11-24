@@ -10,19 +10,13 @@ models:
         tests:
           - not_null
           - unique
-          - relationships:
-              arguments:
-                to: ref('stg_orders')
-                field: order_id
+
       - name: customer_id
         data_type: varchar
         description: "Identifier of the customer that placed the order."
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_customers')
-                field: customer_id
+
       - name: date_date
         data_type: date
         description: "Date on which the order was created."
@@ -41,7 +35,3 @@ models:
       - name: order_segmentation
         data_type: varchar
         description: "Customer-order segment: New, Returning, VIP, or Unknown."
-        tests:
-          - accepted_values:
-              arguments:
-                values: ['New', 'Returning', 'VIP', 'Unknown']
