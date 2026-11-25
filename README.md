@@ -128,6 +128,12 @@ Rather than materializing rigid pre-aggregated tables that restrict BI slicing, 
 | **Ex. 4** | Order table (2025–2026) with `qty_product` | Materialized in `fact_orders` via `int_orders_qty`. |
 | **Ex. 5–6** | Rolling 12m customer order segmentation (`New`, `Returning`, `VIP`) for 2026 orders | Calculated in `int_customer_order_segments` and exposed in `fact_orders.order_segmentation` (filterable by `Year = 2026` or any period). |
 
+### Exercise 1–3 Results
+
+The following Power BI view shows the total 2026 orders and the monthly order and average quantity metrics:
+
+![Power BI results for Exercises 1, 2 and 3](./images/exercises-1-2-3.png)
+
 ### Performance, Cost & Scalability Considerations
 
 Designed with hypothetical billion-row scale in mind:
