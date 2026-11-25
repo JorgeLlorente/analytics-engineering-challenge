@@ -42,6 +42,12 @@ While the challenge prompt references BigQuery and LookML as reference technolog
   └── E-Commerce Performance Hub (5 interactive pages)
 ```
 
+### Fabric Data Pipeline
+
+The Fabric pipeline coordinates the ingestion and transformation steps. It copies `raw_sales` and `raw_orders`, runs the `Load Delta Tables` notebook to load the Delta tables into the Lakehouse, and then triggers the `dbt build` job. If the dbt job fails, the pipeline sends an alert through Office 365 Email.
+
+![Microsoft Fabric pipeline: source copies, Lakehouse loading, dbt build, and failure notification](./images/fabric-pipeline.png)
+
 ### Microsoft Fabric Workspace Inventory
 
 | Artifact Name | Fabric Item Type | Role in the Architecture |
