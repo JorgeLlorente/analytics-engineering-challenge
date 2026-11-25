@@ -165,6 +165,8 @@ Running this reconciliation uncovered **three notable data anomalies** in the so
 
 The Microsoft Fabric Semantic Model (`Sales DS`) sits directly on top of the Gold Star Schema in `DWH` and acts as the governed single source of truth for self-service BI and executive reporting.
 
+![Modelo semántico de Sales DS](./images/semantic-model.png)
+
 ### Key Architectural Practices
 
 * **Dedicated `Metrics` Table:** All DAX measures are centralized in a clean measures table (with technical placeholder columns hidden) to keep business logic DRY and discoverable.
