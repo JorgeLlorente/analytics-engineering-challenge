@@ -6,8 +6,7 @@
 
 🔗 **GitHub Repository:** [https://github.com/JorgeLlorente/analytics-engineering-challenge](https://github.com/JorgeLlorente/analytics-engineering-challenge)
 
-🔗 **Live Dashboard (`Sales & Orders Report`):** `[Insert your Microsoft Fabric / Power BI shared link here]`
-
+🔗 **Live Dashboard (`Sales & Orders Report`):** [Marketing & Sales Intelligence](https://app.fabric.microsoft.com/groups/b5c6bd3f-4df4-4ad0-8c03-fc406733b51a/reports/4cb8ba29-f8ff-4801-bfd7-c2461dce632f/cc470828e6474105629f?ctid=188b450b-7545-493f-9096-854ed4977730&language=en-GB&experience=fabric-developer)
 📊 **Data Coverage:** July 2025 – December 2026
 
 ---
